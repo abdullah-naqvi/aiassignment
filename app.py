@@ -6,7 +6,7 @@ from scipy.stats import zscore
 
 st.set_page_config(page_title="Transaction Analysis Dashboard", layout="wide")
 
-data = pd.read_csv('HBL.csv')
+data = pd.read_excel('https://github.com/abdullah-naqvi/aiassignment/raw/refs/heads/main/Enhanced_Dummy_HBL_Data.xlsx')
 
 st.sidebar.header("Filters")
 region_filter = st.sidebar.multiselect("Select Region", options=data['Region'].unique(), default=data['Region'].unique())
