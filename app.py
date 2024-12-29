@@ -6,7 +6,7 @@ from scipy.stats import zscore
 
 st.set_page_config(page_title="Transaction Analysis Dashboard", layout="wide")
 
-uploaded_file = st.file_uploader("https://github.com/abdullah-naqvi/aiassignment/raw/refs/heads/main/HBL.csv", type=["csv", "xlsx"])
+uploaded_file = st.file_uploader("Upload your dataset", type=["csv", "xlsx"])
 
 if uploaded_file:
     if uploaded_file.name.endswith(".csv"):
@@ -16,7 +16,6 @@ if uploaded_file:
 
     st.sidebar.header("Filters")
     region_filter = st.sidebar.multiselect("Select Region", options=data['Region'].unique(), default=data['Region'].unique())
-    
     filtered_data = data[data['Region'].isin(region_filter)]
 
     st.title("Transaction Analysis Dashboard")
